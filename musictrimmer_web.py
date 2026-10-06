@@ -8,7 +8,7 @@ st.set_page_config(page_title="Audio Trimmer & Player", layout="wide")
 st.title("🎵 Audio Trimmer & Player")
 
 # 1. File Upload
-uploaded_file = st.file_sidebar.file_uploader(
+uploaded_file = st.sidebar.file_uploader(
     "Upload an Audio File", 
     type=["mp3", "wav", "ogg", "flac", "m4a"]
 )
@@ -79,7 +79,7 @@ if uploaded_file is not None:
         # Native Web Download button
         st.download_button(
             label="💾 Download Trimmed Audio",
-            data=buffer,
+            data=buffer.getvalue(),
             file_name=f"trimmed_{uploaded_file.name.split('.')[0]}.mp3",
             mime="audio/mp3"
         )
