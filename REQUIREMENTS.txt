@@ -2,3 +2,4 @@ pydub
 pygame
 numpy
 matplotlib
+streamlit
